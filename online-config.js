@@ -7,7 +7,7 @@
 */
 window.KASIRKU_CONFIG = {
   APP_MODE: 'online',
-  SUPABASE_URL: https://ifczbmwveqgqojhxqwvp.supabase.co ,
-  SUPABASE_ANON_KEY: sb_publishable_k_qILT2QaMi6MZ5Hz-t0Yg_IaGKGm5o ,
+  SUPABASE_URL: 'https://ifczbmwveqgqojhxqwvp.supabase.co' ,
+  SUPABASE_ANON_KEY: 'sb_publishable_k_qILT2QaMi6MZ5Hz-t0Yg_IaGKGm5o' ,
   DEFAULT_STORE_NAME: 'Toko Saya'
 };
