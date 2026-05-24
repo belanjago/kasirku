@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KasirKu - Web Kasir Sederhana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <section id="loginPage" class="login-page">
+    <div class="login-card">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div>
+          <h1>KasirKu</h1>
+          <p>Web kasir sederhana biru putih</p>
+        </div>
+      </div>
+
+      <div class="hero-box">
+        <h2>Masuk sesuai role akun</h2>
+        <p>Master, pemilik toko, dan pelanggan memiliki hak akses berbeda.</p>
+      </div>
+
+      <form id="loginForm" class="form">
+        <label>Role</label>
+        <select id="role" required>
+          <option value="master">Akun Master</option>
+          <option value="owner">Pemilik Toko</option>
+          <option value="customer">Pelanggan</option>
+        </select>
+
+        <label>Username</label>
+        <input id="username" type="text" placeholder="Masukkan username" required />
+
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Masukkan password" required />
+
+        <button type="submit" class="btn primary full">Login</button>
+      </form>
+
+      <div class="demo-account">
+        <h3>Akun Demo</h3>
+        <div class="demo-grid">
+          <button onclick="fillDemo('master')">Master<br><span>master / master123</span></button>
+          <button onclick="fillDemo('owner')">Pemilik<br><span>pemilik / toko123</span></button>
+          <button onclick="fillDemo('customer')">Pelanggan<br><span>pelanggan / pelanggan123</span></button>
+        </div>
+        <button class="btn ghost full" style="margin-top:10px" onclick="resetDemoData()">Reset Data Login</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="appPage" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand small">
+        <div class="logo">K</div>
+        <div>
+          <h1>KasirKu</h1>
+          <p id="roleLabel">Role</p>
+        </div>
+      </div>
+
+      <nav id="menu" class="menu"></nav>
+
+      <button class="btn ghost" onclick="resetDemoData()">Reset Data Demo</button>
+      <button class="btn danger" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="muted">Dashboard</p>
+          <h2 id="pageTitle">Beranda</h2>
+        </div>
+        <div class="user-chip">
+          <span id="userName">User</span>
+          <strong id="userRole">Role</strong>
+        </div>
+      </header>
+
+      <div id="mainContent"></div>
+    </main>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="online-config.js"></script>
+  <script src="supabase-adapter.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
